@@ -1,6 +1,6 @@
 // Crear un algoritmo con un condicional.
 
-/* let num1 = prompt("ingrese numero 1");
+let num1 = prompt("ingrese numero 1");
 let num2 = prompt("ingrese numero 2");
 
 if (num1 < num2){
@@ -9,20 +9,20 @@ if (num1 < num2){
 }else{
     alert("El numero " + num1 + " es mayor que " + num2);
 }
- */
+
 
 
 
 //Crear un algoritmo utilizando un ciclo.
 //comprar entradas por la web
 
-/* for(let entrada = 1; entrada <= 10; entrada++){
+for(let entrada = 1; entrada <= 10; entrada++){
     let nombre = prompt("Ingrese su nombre")
     alert(`Nombre: ${nombre}, Entrada #${entrada}`);
 }
     alert("Se agotaron las entradas");
 
- */
+
 
 //simulador interactivo
 
