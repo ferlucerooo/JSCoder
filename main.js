@@ -1,35 +1,17 @@
-// Crear un algoritmo con un condicional.
-
-let num1 = prompt("ingrese numero 1");
-let num2 = prompt("ingrese numero 2");
-
-if (num1 < num2){
-    
-    alert("El numero " + num1 + " es menor que " + num2);
-}else{
-    alert("El numero " + num1 + " es mayor que " + num2);
-}
+//simulador interactivo de login y venta de entradas
 
 
 
+//En estos objetos tenemos los usuarios registrados
+const usuarios = [
+    {user: "FerLucero", pw:"ferlu"},
+    {user:"Andresgon", pw:"andres1234"},
+    {user:"victoria", pw:"vicky1234"}
+]
 
-//Crear un algoritmo utilizando un ciclo.
-//comprar entradas por la web
-
-for(let entrada = 1; entrada <= 10; entrada++){
-    let nombre = prompt("Ingrese su nombre")
-    alert(`Nombre: ${nombre}, Entrada #${entrada}`);
-}
-    alert("Se agotaron las entradas");
-
-
-
-//simulador interactivo
-
-const user1 = "FerLucero";
-const pw1 = "ferlu";
 const intentos = 2;
 
+//Creamos funcion para login con 3 intentos
 function login(){
 
 for(let i = 0; i <= intentos; i++){
@@ -37,8 +19,14 @@ for(let i = 0; i <= intentos; i++){
     let user = prompt("Ingrese su usuario");
     let pw = prompt("Ingrese su contraseña");
 
-    if(user === user1 && pw === pw1){
-        alert("Bienvenido FerLucero");
+//Buscamos en los objetos si existe ese usuario ingresado
+    const usuarioEncontrado = usuarios.find(
+        (usuario) => usuario.user === user && usuario.pw === pw
+        );
+
+    if(usuarioEncontrado){
+        alert(`Bienvenido ${usuarioEncontrado.user}`);
+        ventaEntradas(user);                                   //iniciamos la funcion de las entradas si el usuario es correcto
         return;
     }else{
         alert("Usuario o contraseña incorrecta");
@@ -47,5 +35,31 @@ for(let i = 0; i <= intentos; i++){
 }
 alert("Ha agotado los intentos de inicio de sesion");
 }
+
+
+//funcion para la venta de entradas
+
+
+function ventaEntradas(user){
+    const maxEntradas = 4;
+    let cantidadEntradas = parseInt(prompt("Ingrese la contidad de entradas que desea adquirir:"));
+    
+    if (cantidadEntradas > maxEntradas){
+        alert(`Solo puede adquirir un máximo de ${maxEntradas} entradas por persona`);
+        return;
+    }
+
+    for (let entrada = 1; entrada <= cantidadEntradas; entrada++){
+        let nombre = prompt("Ingrese el nombre de la persona que usara la entrada");
+        alert(`Nombre: ${nombre}, Entrada #${entrada}`);
+    }
+
+    if(cantidadEntradas === maxEntradas){
+        alert("Has alcanzado el máximo pisoble de entradas adquiridas.");
+    }else{
+        alert("Completaste con éxito la compra de tus entradas.");
+    }
+}
+
 
 login();
