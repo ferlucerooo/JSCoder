@@ -2,12 +2,22 @@
 
 
 
-//En estos objetos tenemos los usuarios registrados
-const usuarios = [
-    {user: "FerLucero", pw:"ferlu"},
-    {user:"Andresgon", pw:"andres1234"},
-    {user:"victoria", pw:"vicky1234"}
-]
+//En esta class tenemos los usuarios que se agregran al array vacio mediante el push
+
+class Usuarios {
+    constructor(user, pw){
+        this.user = user;
+        this.pw = pw;
+    }
+}
+const usuarios = [];
+const usuario1 = new Usuarios ("FerLucero", "ferlu");
+const usuario2 = new Usuarios ("Andresgon", "andres1234");
+const usuario3 = new Usuarios ("victoria", "vicky1234");
+usuarios.push(usuario1);
+usuarios.push(usuario2);
+usuarios.push(usuario3);
+
 
 const intentos = 2;
 
@@ -25,7 +35,7 @@ for(let i = 0; i <= intentos; i++){
         );
 
     if(usuarioEncontrado){
-        alert(`Bienvenido ${usuarioEncontrado.user}`);
+        alert(`Bienvenido/a ${usuarioEncontrado.user}`);
         ventaEntradas(user);                                   //iniciamos la funcion de las entradas si el usuario es correcto
         return;
     }else{
@@ -38,7 +48,6 @@ alert("Ha agotado los intentos de inicio de sesion");
 
 
 //funcion para la venta de entradas
-
 
 function ventaEntradas(user){
     const maxEntradas = 4;
@@ -55,7 +64,8 @@ function ventaEntradas(user){
     }
 
     if(cantidadEntradas === maxEntradas){
-        alert("Has alcanzado el máximo pisoble de entradas adquiridas.");
+        alert("Has alcanzado el máximo posible de entradas adquiridas.");
+        alert("Completaste con éxito la compra de tus entradas.");
     }else{
         alert("Completaste con éxito la compra de tus entradas.");
     }
