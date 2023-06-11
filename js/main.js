@@ -1,5 +1,3 @@
-//simulador interactivo de login y venta de entradas
-
 //En esta class tenemos los usuarios que se agregran al array vacio mediante el push
 
 class Usuarios {
@@ -16,6 +14,9 @@ usuarios.push(usuario1);
 usuarios.push(usuario2);
 usuarios.push(usuario3);
 
+//guardamos en el localstorage los usuarios
+localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
 // al apretar el boton que tiene como id(login) se inicia la funcion login
 
 let botonIngresar = document.getElementById("login");
@@ -23,7 +24,11 @@ botonIngresar.addEventListener("click", login);
 
 //al estar el cursor en la parte de contraseña y al apretar enter ingresa sin hacer click en el boton ingresar
 let inputPw = document.getElementById("pw");
-inputPw.addEventListener('keydown', login);
+inputPw.addEventListener('keydown', function(event){
+    if(event.key === "Enter"){
+        login();
+    }
+});
 
 
 //funcion para loguearse
@@ -38,19 +43,8 @@ function login () {
     );
 // si el usuario es correcto entra a la pag
     usuarioEncontrado 
-    ? window.location="./pages/inicio.html"
+    ? window.location.href="./pages/tienda.html"
     : document.getElementById("mensaje").textContent = "Usuario o contraseña incorrecta";  // operador cambiado por if...else
-
-}
-
-
-
-
-
-
-
-
-
-
-
+    
+}  
 

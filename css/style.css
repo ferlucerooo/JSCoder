@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* Login */
 .div-login{
@@ -55,38 +60,34 @@ input{
     cursor: pointer;
 }
 /* img peliculas */
-.img-wh{
-    width: 300px;
+.producto-img{
+    width: 400px;
     height: 300px;
 }
 
 /* card */
-.container{
+.contenedor-productos{
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 20px;
     padding: 20px;
 }
-#containerCarrito{
+.contenedor-carrito{
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 20px;
+    grid-template-columns: auto ;
+    gap: 2px;
+    padding: 20px;
+    right: 10px;
+    height: 600px;
+    width: 400px;
+}
+
+.producto{
+    border: 2px solid #525151;
     padding: 20px;
 }
-.card{
-    border: 1px solid #ccc;
-    padding: 10px;
-    
-}
-h1{
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-.boton{
+
+.boton-agregar{
     background-color: #4CAF50; 
     border: none;
     color: white;
@@ -96,7 +97,7 @@ h2 {
     display: inline-block;
     font-size: 12px;
 }
-.boton-e{
+.boton-eliminar{
     background-color: #ff0202; 
     border: none;
     color: white;
@@ -106,4 +107,67 @@ h2 {
     display: inline-block;
     font-size: 12px;
 }
+
+
+ /* header */
+header{
+    display: grid;
+    padding: 0;
+    width: 100%;
+    height: 40vh;
+}
+ul, li, a{
+    list-style-type: none;
+    text-decoration: none;
+    padding-right: 10px;
+}
+.nav{
+    background-color: #555;
+    height: 70px;
+}
+.menu{
+    display: flex;
+}
+.Limg{
+    height: 68px;
+    text-decoration: none;
+    padding-right: 800px;
+}
+.boton-menu{
+    color: white;
+}
+.banner{
+    justify-self: center;
+}
+/* main */
+main{
+width: 100%;
+height: 100vh;
+
+}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 6vh;
+    background-color: #555;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+
+.div__a{
+    padding: 8px;
+}
+.div__p{
+    color: white;
+}
+.arriba{
+    position:absolute;
+    right: 0px;
+}
+
+
+/* carrito */
 
