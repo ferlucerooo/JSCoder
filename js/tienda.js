@@ -44,9 +44,9 @@ function cargarProductos () {
                         <img src="../img/${producto.id}.jpg" alt="${producto.nombre}" class="producto-img">
                         <div class="producto-detalles">
                           <h3 class="producto-nombre"> ${producto.nombre} </h3>
-                          <h3 class="producto-cantidad">Cantidad: ${producto.cantidad} </h3>
+                          <h3 class="producto-cantidad"> ${producto.cantidad} </h3>
                           <p class="producto-precio">Precio: ${producto.precio} </p>
-                          <button id="boton${producto.id}" class="boton-agregar"> Agregar al Carrito </button>
+                          <button id="boton${producto.id}" class="boton-agregar"> <i class="bi bi-cart-plus"></i> </button>
                         </div>
                       </div>`;
     contenedorProductos.append(divProducto);

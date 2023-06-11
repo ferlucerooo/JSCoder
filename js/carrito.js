@@ -21,7 +21,7 @@ const totalCompra = document.getElementById('total');
                           <h3 class="producto-nombre"> ${producto.nombre} </h3>
                           <h3 class="producto-cantidad">Cantidad: ${producto.cantidad} </h3>
                           <p class="producto-precio">Precio: ${producto.precio} </p>
-                          <button onClick = "eliminar(${producto.id})" class="boton-eliminar"> <i class="bi bi-trash-fill"></i> </button>
+                          <button onClick = "eliminar(${producto.id})" class="boton-eliminar"> <i class="bi bi-trash"></i> </button>
                         </div>
                       </div>`;
 contenedorCarritoProductos.append(div);
