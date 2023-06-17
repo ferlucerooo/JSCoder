@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrada web</title>
+    <title>Entrada web || Inicio de sesion</title>
+    <!-- cdn bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- LIBRERIA -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="body-index">
     <main class="main-login containerfluid"> 
         <div class="row div-login">
             <div class="form "> 
                 <h1 class="form__h1">Inicio de sesion</h1>
                 <p class="form__p">Ingrese su usuario y contraseña.</p>
                 <div class="form__input">
-                <label for="Nombre">Usuario:</label>
+                <label class="nombre" for="Nombre">Usuario: <i class="bi bi-person-circle"></i></label>
                 <input type="text" placeholder="Usuario" required id="user">
-                <label for="Apellido">Contraseña:</label>
+                <label class="contraseña" for="Apellido">Contraseña: <i class="bi bi-lock"></i></label>
                 <input type="password" placeholder="Contraseña" required id="pw">
                 <div>
-                    <label for="Recordarme"><input type="checkbox" class="recordarme" id="recordarme">Recordarme</label>
+                    <label for="Recordarme"><input type="checkbox" class="recordarme" id="recordarme"> Recuérdame</label>
                 </div>
                 <input class="form__enviar" type="button" value="Ingresar" id="login">
                 </div>
@@ -28,6 +34,9 @@
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

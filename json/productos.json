@@ -1,0 +1,7 @@
+[
+    {"id":1, "nombre":"Mario Bros", "precio": 3000,"cantidad": 1},
+    {"id":2, "nombre":"River vs Boca", "precio": 8000,"cantidad": 1},
+    {"id":3, "nombre":"La renga en Londres", "precio": 9000,"cantidad": 1},
+    {"id":4, "nombre":"Argentina vs Francia", "precio": 40000,"cantidad": 1}
+
+]

@@ -1,40 +1,39 @@
-//Creo la clase Producto, con las propiedades id, nombre, precio y cantidad:
 
+/* let productos = [];
+fetch("../json/productos.json")
+.then(response => response.json())
+.then(data =>{
+  productos = data;
+  cargarProductos(productos);
+})
+.catch(error => {
+  console.error('Error al obtener los productos:', error);
+}); */
 
-class Producto {
-    constructor(id, nombre, precio, cantidad) {
-      this.id = id;
-      this.nombre = nombre;
-      this.precio = precio;
-      this.cantidad = cantidad;
-    }
+// traemos los productos de un json
+
+let productos = [];
+const traerProductos = async () => {
+  try{
+    const response = await fetch("../json/productos.json");
+    productos = await response.json();
+    cargarProductos ();
   }
+  catch(error) {
+    console.log('Error al obtener los productos:', error);
+  };
+}
 
- //Creo productos y los almaceno en un array:
-const producto1 = new Producto (1, "Mario Bros", 3000, 1);
-const producto2 = new Producto (2, "River vs Boca", 8000, 1);
-const producto3 = new Producto (3, "La renga en Londres", 9000, 1);
-const producto4 = new Producto (4, "Argentina vs Francia", 40000, 1);
+traerProductos();
 
-const productos = [producto1, producto2, producto3, producto4];
-
-
-
-/* const carritoLS = JSON.parse(localStorage.getItem('carrito'));
-
-if (carritoLS){
-  carrito = carritoLS;
-  actualizarNumerito();
-}else{
-  carrito =[];
-} */
-// cargamos los productos al array carrito
 
 const contenedorProductos = document.getElementById('contenedor-productos');
 const numerito =document.getElementById("numerito");
 let productoEnCarrito;
 const productoEnCarritoLS = JSON.parse(localStorage.getItem('productos-en-carrito'));
 
+
+// funcion para cargar los productos al html mediante js
 function cargarProductos () {
 
   productos.forEach((producto)=>{
@@ -59,10 +58,9 @@ function cargarProductos () {
 }
 
 
-cargarProductos();
-// array vacio donde se agregan al apretar el boton agregar al carrito
 
 
+// si los productos en carrito estan en el storage, producto en carrito = productoEnCarritoLS y se actualiza el numero del carrito
 
 if(productoEnCarritoLS){
   productoEnCarrito = productoEnCarritoLS;
@@ -71,7 +69,17 @@ if(productoEnCarritoLS){
   productoEnCarrito =[];
 }
 
+//  se agregan al apretar el boton agregar al carrito
 const agregarAlCarrito = (id) => {
+
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Se agregó al carrito',
+    showConfirmButton: false,
+    timer: 1500
+  })
+
   const producto = productos.find((producto) => producto.id === id);
   const productoAgregado = productoEnCarrito.find((producto) => producto.id === id);
   
@@ -92,3 +100,5 @@ function actualizarNumerito(){
   let nuevoNumerito = productoEnCarrito.reduce((acc, productos) => acc + productos.cantidad, 0);
   numerito.innerText = nuevoNumerito;
 }
+
+

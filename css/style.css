@@ -6,38 +6,51 @@
 }
 
 /* Login */
+.body-index{
+  background: url(../img/ticketsbackground.jpg);
+}
 .main-login{
 width: 60%;
 margin: auto;
-height: 60vh;
+height: 40vh;
 }
 .div-login{
     background-color: #2748ca;
     border-radius: 20px;
     display: grid;
-    margin-top: 16%;
+    margin-top: 6%;
+    backdrop-filter: blur(6px);
+    background: transparent;
+    border: #fff solid;
 }
 .form{
     padding: 100px;
     border-radius: 20px;
-    box-shadow: 2px 2px 10px 1px rgb(44, 44, 143);
+    box-shadow: 2px 2px 10px 1px rgb(62, 62, 63);
+    
 }
 .form__h1{
     color: white;
     display: flex;
     justify-content: center;
-    font-size: 40px;
+    font-size: 30px;
 }
 .form__p{
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(255, 255, 255);
     margin-top:60px;
 }
 .form__input{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-top: 60px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 16px;
+}
+.nombre, .contraseña{
+  margin-top: 10px;
+  margin-bottom: -10px;
+  
 }
 .form__mensaje{
     color: white;
@@ -46,23 +59,29 @@ label{
     color: rgb(255, 255, 255);
 }
 input{
-    color: rgb(2, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 6px;
     border-radius: 2px;
     border: 2px solid, white;
     outline: none;
     margin-top: 30px;
+    background: transparent;
 }
 .form__enviar{
     margin-top: 30px;
     color: white;
     border-radius: 20px;
     height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     border:0 ;
     background-color: rgb(6, 6, 10);
     cursor: pointer;
+} 
+.form__enviar:hover{
+  color: black;
+  background-color: white;
 }
+
 /* img peliculas */
 .producto-img{
     width: 300px;
@@ -86,9 +105,19 @@ input{
 }
 
 .producto{
-    border: 2px solid #525151;
+    border: 2px solid #f8f8f8;
     padding: 20px;
+    border-radius: 10px;
+    background-color: #242630;
 }
+
+.producto-nombre, .producto-cantidad, .producto-precio{
+  color: #fff;
+}
+
+
+
+
 .boton-agregar {
     background: #fff; /* color de fondo */
     color: green; /* color de fuente */
@@ -178,7 +207,7 @@ ul, li, a{
     padding-right: 10px;
 }
 .nav{
-    background-color: #555;
+    background:#020202;
     height: 70px;
     display: flex;
 }
@@ -195,7 +224,9 @@ ul, li, a{
     color: white;
     font-size: 16px;
 }
-
+.boton-menu:hover{
+  color: #7885ca;
+}
 .banner{
     justify-self: center;
 }
@@ -210,7 +241,7 @@ height: 100vh;
 footer{
     width: 100%;
     height: 6vh;
-    background-color: #555;
+    background-color: #000000;
     bottom: 0;
     display: grid;
     grid-template-columns: auto auto;
@@ -218,19 +249,28 @@ footer{
 }
 
 .div__a{
-    padding: 8px;
+    padding-left: 10px;
 }
+
 .div__p{
     color: white;
-}
-.arriba{
-    position:absolute;
-    right: 0px;
+    margin-right: 1000px;
 }
 
 
 /* carrito */
-
+.titulo-principal{
+  color: #fff;
+}
+.total-color{
+  color: #fff;
+}
+.entradas-titulo{
+  color: #fff;
+}
+.body-tienda,.body-carrito{
+  background: url(../img/ticketsbackground.jpg);
+}
 .menu-carrito{
     display: flex;
     align-items: center;
