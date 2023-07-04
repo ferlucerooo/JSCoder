@@ -1,10 +1,12 @@
 const productoEnCarrito = JSON.parse(localStorage.getItem('productos-en-carrito'));
 
-const contenedorCarritoVacio = document.getElementById('carrito-vacio');
 const contenedorCarritoProductos = document.getElementById('carrito-productos');
-const contenedorCarritoAcciones = document.getElementById('carrito-acciones');
-const contenedorCarritoComprado = document.getElementById('carrito-comprado');
 const totalCompra = document.getElementById('total');
+
+
+/* const contenedorCarritoVacio = document.getElementById('carrito-vacio');
+const contenedorCarritoAcciones = document.getElementById('carrito-acciones');
+const contenedorCarritoComprado = document.getElementById('carrito-comprado'); */
 
 // cargamos los productos al carrito con esta funcion
 
@@ -15,7 +17,7 @@ function cargarProductosCarrito(){
   contenedorCarritoProductos.innerHTML = "";
   productoEnCarrito.forEach(producto => {
     const div = document.createElement('div');
-    div.classList.add('carrito-producto');
+    /* div.classList.add('carrito-producto'); */
     div.innerHTML = `
                       <div class="producto">
                         <img src="../img/${producto.id}.jpg" alt="${producto.nombre}" class="producto-img">
@@ -75,7 +77,7 @@ vaciarCarrito.addEventListener('click', () => {
 //calculamos el total 
 function calTotal () {
   const totalCalculado = productoEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-  total.innerHTML = `$${totalCalculado}`;
+  totalCompra.innerHTML = `$${totalCalculado}`;
 }
 
 // compra realizada 
